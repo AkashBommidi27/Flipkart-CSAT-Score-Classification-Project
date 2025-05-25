@@ -72,7 +72,7 @@ Outperformed other algorithms due to its ability to handle imbalanced classes an
 * **Customer Retention**: Identifying and addressing dissatisfaction early can improve customer loyalty and reduce churn.
 * **Operational Efficiency**: Optimizing response times and resource allocation can enhance support team performance.
 
-# Requirements File
+# Requirements
 * jupyter
 * pandas
 * numpy

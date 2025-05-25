@@ -56,10 +56,16 @@ The dataset is available in the repository under `Customer_support_data.csv`.
    - Accuracy, Precision, Recall, F1 Score, and ROC AUC were used to assess model performance.
    - The model excels at identifying dissatisfied customers, enabling proactive interventions.
 
-## Installation
-To run this project locally, follow these steps:
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/AkashBommidi27/Flipkart-Customer-Satisfaction-ML.git
-   cd Flipkart-Customer-Satisfaction-ML
+# Results
+## Model Performance:
+**XGBoost Classifier**: Achieved a Weighted F1 Score of 0.81 and ROC AUC of 0.8920 after hyperparameter tuning.
+Outperformed other algorithms due to its ability to handle imbalanced classes and complex feature interactions.
+**Key Insights**:
+*Features like chance_to_churn, sentiment_score, and response_time_minutes are critical drivers of CSAT.
+*Faster response times and experienced agents correlate with higher satisfaction.
+*SHAP analysis provides actionable insights for improving customer service workflows.
+## Business Impact
+**Proactive Interventions**: The model can flag tickets likely to receive low CSAT scores, allowing real-time interventions.
+**Agent Training**: Insights into agent performance and tenure can guide targeted training programs.
+**Customer Retention**: Identifying and addressing dissatisfaction early can improve customer loyalty and reduce churn.
+**Operational Efficiency**: Optimizing response times and resource allocation can enhance support team performance.

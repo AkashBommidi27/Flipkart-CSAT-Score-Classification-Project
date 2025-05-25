@@ -67,7 +67,7 @@ Outperformed other algorithms due to its ability to handle imbalanced classes an
 * SHAP analysis provides actionable insights for improving customer service workflows.
 
 ## Business Impact
-**Proactive Interventions**: The model can flag tickets likely to receive low CSAT scores, allowing real-time interventions.
-**Agent Training**: Insights into agent performance and tenure can guide targeted training programs.
-**Customer Retention**: Identifying and addressing dissatisfaction early can improve customer loyalty and reduce churn.
-**Operational Efficiency**: Optimizing response times and resource allocation can enhance support team performance.
+* **Proactive Interventions**: The model can flag tickets likely to receive low CSAT scores, allowing real-time interventions.
+* **Agent Training**: Insights into agent performance and tenure can guide targeted training programs.
+* **Customer Retention**: Identifying and addressing dissatisfaction early can improve customer loyalty and reduce churn.
+* **Operational Efficiency**: Optimizing response times and resource allocation can enhance support team performance.

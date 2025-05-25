@@ -60,10 +60,12 @@ The dataset is available in the repository under `Customer_support_data.csv`.
 ## Model Performance:
 **XGBoost Classifier**: Achieved a Weighted F1 Score of 0.81 and ROC AUC of 0.8920 after hyperparameter tuning.
 Outperformed other algorithms due to its ability to handle imbalanced classes and complex feature interactions.
+
 **Key Insights**:
 *Features like chance_to_churn, sentiment_score, and response_time_minutes are critical drivers of CSAT.
 *Faster response times and experienced agents correlate with higher satisfaction.
 *SHAP analysis provides actionable insights for improving customer service workflows.
+
 ## Business Impact
 **Proactive Interventions**: The model can flag tickets likely to receive low CSAT scores, allowing real-time interventions.
 **Agent Training**: Insights into agent performance and tenure can guide targeted training programs.

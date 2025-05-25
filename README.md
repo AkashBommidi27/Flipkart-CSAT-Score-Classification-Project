@@ -71,3 +71,14 @@ Outperformed other algorithms due to its ability to handle imbalanced classes an
 * **Agent Training**: Insights into agent performance and tenure can guide targeted training programs.
 * **Customer Retention**: Identifying and addressing dissatisfaction early can improve customer loyalty and reduce churn.
 * **Operational Efficiency**: Optimizing response times and resource allocation can enhance support team performance.
+
+# Requirements File
+* jupyter
+* pandas
+* numpy
+* matplotlib
+* seaborn
+* scikit-learn
+* xgboost
+* catboost
+* shap

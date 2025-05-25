@@ -1,4 +1,4 @@
-# Flipkart Customer Service Satisfaction Prediction
+# Flipkart Customer Service Satisfaction Classification
 
 ## Project Overview
 This project focuses on predicting **Customer Satisfaction Scores (CSAT)** for Flipkart's customer support interactions using a supervised machine learning classification approach. The CSAT scores range from 1 (very dissatisfied) to 5 (very satisfied). By leveraging historical customer support data, the project aims to identify patterns that influence customer satisfaction, enabling proactive interventions to enhance service quality and customer retention.

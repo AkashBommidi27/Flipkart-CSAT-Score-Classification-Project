@@ -1,84 +1,72 @@
-# Flipkart Customer Service Satisfaction Classification
+# Classification - Flipkart Customer Service Satisfaction
 
 ## Project Overview
-This project focuses on predicting **Customer Satisfaction Scores (CSAT)** for Flipkart's customer support interactions using a supervised machine learning classification approach. The CSAT scores range from 1 (very dissatisfied) to 5 (very satisfied). By leveraging historical customer support data, the project aims to identify patterns that influence customer satisfaction, enabling proactive interventions to enhance service quality and customer retention.
 
-The dataset, `Customer_support_data.csv`, contains detailed information about customer interactions, including ticket details, agent performance, response times, and customer feedback. The project employs advanced machine learning techniques, including **XGBoost**, to build a robust classification model, with SHAP analysis for interpretability.
+This project aims to build a machine learning classification model to predict **Customer Satisfaction Scores (CSAT)** (ranging from 1 to 5) based on historical customer support interaction data. By analyzing various factors like past interactions, agent behavior, customer remarks, and ticket resolution times, the model proactively identifies areas needing improvement and optimizes support workflows for Flipkart.
 
-### Objective
-- Build a classification model to predict CSAT scores (1–5) based on customer support interaction features.
-- Identify key factors influencing customer satisfaction to guide operational improvements.
-- Provide actionable insights for Flipkart to enhance customer service workflows and reduce dissatisfaction.
+## Problem Statement
 
-### Dataset
-The dataset (`Customer_support_data.csv`) includes the following key features:
-- **Unique id**: Unique identifier for each support ticket.
-- **channel_name**: Communication channel (e.g., Email, Chat, Phone).
-- **category**: Broad issue category (e.g., Technical, Billing).
-- **Sub-category**: Specific issue type (e.g., Login Failure).
-- **Customer Remarks**: Free-text customer feedback (used for sentiment analysis).
-- **Order_id**: Associated order ID.
-- **order_date_time**: Timestamp of the order.
-- **Issue_reported at**: Timestamp when the issue was reported.
-- **issue_responded**: Timestamp of the agent's response.
-- **Survey_response_Date**: Date of CSAT feedback submission.
-- **Customer_City**: Customer's city.
-- **Product_category**: Product type involved.
-- **Item_price**: Price of the item.
-- **connected_handling_time**: Time spent by the agent resolving the issue.
-- **Agent_name**, **Supervisor**, **Manager**: Agent and team details.
-- **Tenure Bucket**: Agent experience level (e.g., 0–6 months).
-- **Agent Shift**: Shift during which the ticket was handled (e.g., Morning, Evening).
-- **CSAT Score** (Target): Satisfaction score (1–5).
+In a competitive environment, exceptional customer support is vital for retention. Relying on post-interaction CSAT feedback is often reactive. This project develops a machine learning classification model to predict CSAT scores proactively from historical support data. By analyzing structured data such as ticket handling time, agent performance, issue type, and metadata, the goal is to enable early intervention to improve service experience and customer loyalty.
 
-The dataset is available in the repository under `Customer_support_data.csv`.
+## Dataset
 
-## Project Structure
-- `Flipkart_Classification_Project.ipynb`: Main Jupyter notebook containing the end-to-end machine learning pipeline, including data preprocessing, exploratory data analysis (EDA), model training, evaluation, and SHAP analysis.
-- `Customer_support_data.csv`: Dataset used for training and testing the model.
-- `README.md`: This file provides an overview and setup instructions.
-- `requirements.txt`: List of Python dependencies required to run the project.
+The project utilizes the `Customer_support_data.csv` dataset, which contains multiple entries from a customer support system. Each row represents a unique customer interaction with metadata such as:
+* `channel_name`: Communication channel used by the customer (e.g., Email, Chat, Phone).
+* `category`: Broad classification of the support issue (e.g., Technical, Billing, Account).
+* `Sub-category`: More specific issue label (e.g., "Login Failure").
+* `Customer Remarks`: Free-text input from customers.
+* `Issue_reported at` & `issue_responded`: Timestamps for calculating response and resolution delays.
+* `Customer_City`, `Product_category`, `Item_price`.
+* `connected_handling_time`: Total time spent by the agent.
+* `Agent_name`, `Supervisor`, `Manager`, `Tenure Bucket`, `Agent Shift`.
+* **`CSAT Score`**: The target variable (1 to 5).
 
-## Methodology
-1. **Data Preprocessing**:
-   - Handled missing values and encoded categorical variables using LabelEncoder.
-   - Derived features such as `response_time_minutes` and `time_from_order_to_response`.
-   - Standardized numerical features using StandardScaler.
-2. **Exploratory Data Analysis (EDA)**:
-   - Conducted Univariate, Bivariate, and Multivariate analyses with 15+ visualizations to uncover patterns in CSAT scores, response times, agent performance, and more.
-   - Key insights include the impact of response time and agent tenure on satisfaction.
-3. **Model Development**:
-   - Evaluated multiple algorithms, with **XGBoost Classifier** achieving the best performance (Weighted F1 Score: 0.81, ROC AUC: 0.8920).
-   - Applied cross-validation and hyperparameter tuning using GridSearchCV to optimize model performance.
-4. **Model Interpretability**:
-   - Used SHAP (SHapley Additive exPlanations) to identify key features influencing predictions, such as `chance_to_churn`, `sentiment_score`, `response_time_minutes`, and `connected_handling_time`.
-5. **Evaluation Metrics**:
-   - Accuracy, Precision, Recall, F1 Score, and ROC AUC were used to assess model performance.
-   - The model excels at identifying dissatisfied customers, enabling proactive interventions.
+## Use Cases
 
-# Results
-## Model Performance:
-**XGBoost Classifier**: Achieved a Weighted F1 Score of 0.81 and ROC AUC of 0.8920 after hyperparameter tuning.
-Outperformed other algorithms due to its ability to handle imbalanced classes and complex feature interactions.
+This classification model can be used by customer service teams to:
+* Flag at-risk tickets likely to receive low CSAT scores.
+* Identify factors leading to dissatisfaction.
+* Guide training and resource allocation to improve service quality.
 
-**Key Insights**:
-* Features like chance_to_churn, sentiment_score, and response_time_minutes are critical drivers of CSAT.
-* Faster response times and experienced agents correlate with higher satisfaction.
-* SHAP analysis provides actionable insights for improving customer service workflows.
+## Technologies Used
 
-## Business Impact
-* **Proactive Interventions**: The model can flag tickets likely to receive low CSAT scores, allowing real-time interventions.
-* **Agent Training**: Insights into agent performance and tenure can guide targeted training programs.
-* **Customer Retention**: Identifying and addressing dissatisfaction early can improve customer loyalty and reduce churn.
-* **Operational Efficiency**: Optimizing response times and resource allocation can enhance support team performance.
+* **Python**
+* **Jupyter Notebook**
+* **Pandas**: For data manipulation.
+* **NumPy**: For numerical operations.
+* **Matplotlib** & **Seaborn**: For data visualization.
+* **Scikit-learn**: For model selection (`train_test_split`, `GridSearchCV`, `cross_val_score`), preprocessing (`LabelEncoder`, `StandardScaler`), and evaluation metrics (`classification_report`, `accuracy_score`, `precision_score`, `recall_score`, `f1_score`).
+* **RandomForestClassifier**
+* **XGBoost (XGBClassifier)**
 
-# Requirements
-* jupyter
-* pandas
-* numpy
-* matplotlib
-* seaborn
-* scikit-learn
-* xgboost
-* catboost
-* shap
+## How to Run
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/AkashBommidi27/Flipkart-Customer-Satisfaction-ML.git](https://github.com/AkashBommidi27/Flipkart-Customer-Satisfaction-ML.git)
+    cd Flipkart-Customer-Satisfaction-ML
+    ```
+
+2.  **Install the required libraries:**
+    ```bash
+    pip install pandas numpy matplotlib seaborn scikit-learn xgboost jupyter
+    ```
+
+3.  **Open the Jupyter Notebook:**
+    ```bash
+    jupyter notebook Flipkart_Classification_Project.ipynb
+    ```
+
+4.  Run all cells in the notebook to execute the analysis, model training, and evaluation.
+
+## Key Insights
+
+* The XGBoost classifier demonstrated strong performance, achieving a **Weighted F1 Score of 0.81** and a **ROC AUC Score of 0.8920**.
+* **SHAP analysis** revealed key influential features, including `chance_to_churn`, `sentiment_score`, `response_time_minutes`, and `connected_handling_time`, validating the model's alignment with customer behavior and service dynamics.
+* These insights are actionable, enabling Flipkart to proactively intervene with high-risk tickets, enhance agent training, and improve overall customer retention and satisfaction.
+
+## GitHub Link
+
+You can access the full project repository here: [Flipkart Customer Satisfaction ML](https://github.com/AkashBommidi27/Flipkart-Customer-Satisfaction-ML)
+
+---
